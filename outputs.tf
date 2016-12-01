@@ -3,7 +3,7 @@ output "private_subnets" {
 }
 
 output "public_subnets" {
-  value = ["${aws_subnet.public.*.id}"]
+  value = "${join(",", aws_subnet.public.*.id)}"
 }
 
 output "vpc_id" {
